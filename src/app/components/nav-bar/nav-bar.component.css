@@ -1,0 +1,51 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cooking, .travel, .blogger, .about-me {
+    margin: 1em;
+    font-size: small;
+    cursor: pointer;
+    font-weight: 100;
+}
+
+/* .travel {
+    margin: 1em;
+    font-size: small;
+    cursor: pointer;
+}
+
+.blogger {
+    margin: 1em;
+    font-size: small;
+    cursor: pointer;
+} */
+
+.logo {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.selected {
+    font-weight: 500;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+}
+
+a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: inherit;
+    text-decoration: inherit;
+    margin: 0.2em;
+}
+
+img {
+    max-width: 1em;
+    height: auto;
+}

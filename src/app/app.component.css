@@ -1,0 +1,21 @@
+.router-outlet-container {
+    display: flex;
+    justify-content: center;
+    background-image: url('https://chopra.brightspotcdn.com/35/7f/6af0bad84c0fa4134223c8d67986/photo-1458093257227-0f30303eb1f0.jpeg');
+    /* background-image: url('https://images.squarespace-cdn.com/content/v1/5cb9ef147eb88c5caefa30b3/1588321247993-H6RDJYZJHX25NH2KCYRC/Iceland+0b+3.jpg?format=2500w'); */
+    /* background-image: url('https://images.squarespace-cdn.com/content/v1/5cb9ef147eb88c5caefa30b3/1588321365560-QP1ESG9X9SO5J0H38DWS/Iceland+19.jpg?format=2500w'); */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* opacity: 10%; */
+    height: 100vh;
+}
+
+/* app-nav-bar {
+    position: sticky;
+} */
+
+.page {
+    background-color: white;
+    width: 60%;
+    opacity: 90%;
+}
