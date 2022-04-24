@@ -18,9 +18,11 @@ import { AboutMeComponent } from './pages/about-me/about-me.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { CookingPostComponent } from './pages/cooking-post/cooking-post.component';
-import {MatIconModule} from '@angular/material/icon';
-
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { TravelPostComponent } from './pages/travel-post/travel-post.component';
+import { AddPostDialogComponent } from './components/add-post-dialog/add-post-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {MatIconModule} from '@angular/material/icon';
     NavBarComponent,
     TravelComponent,
     AboutMeComponent,
-    CookingPostComponent
+    CookingPostComponent,
+    TravelPostComponent,
+    AddPostDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     MatGridListModule,
     MatIconModule,
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,16 @@
-<p>travel works!</p>
+<div class="container">
+    <mat-card *ngFor="let post of travelPosts" class="post" [routerLink]="'/travel/' + post.id">
+        <div class="img-container">
+            <img [src]="post.imageUrl">
+        </div>
+        <mat-card-header>
+            <mat-card-title>{{post.title}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{post.description}}</p>
+        </mat-card-content>
+    </mat-card>
+
+    <!-- Add Button -->
+    <img class="add-button" src="assets/add_button.png" (click)="addNewTravelPost()">
+</div>

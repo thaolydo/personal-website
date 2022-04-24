@@ -1,0 +1,23 @@
+<h1 mat-dialog-tittle>{{data.title}}</h1>
+
+<div mat-dialog-content>
+    <form [formGroup]="form">
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput type="text" placeholder="title" formControlName="title">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input matInput type="text" placeholder="description" formControlName="description">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Image URL</mat-label>
+            <input matInput type="text" placeholder="image URL" formControlName="imageUrl">
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-actions>
+    <button [mat-dialog-close]="form.value">Add</button>
+    <button mat-dialog-close>Cancel</button>
+</div>

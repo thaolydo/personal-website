@@ -6,6 +6,7 @@ import { BloggerComponent } from './pages/blogger/blogger.component';
 import { CookingPostComponent } from './pages/cooking-post/cooking-post.component';
 import { CookingComponent } from './pages/cooking/cooking.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { TravelPostComponent } from './pages/travel-post/travel-post.component';
 import { TravelComponent } from './pages/travel/travel.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about-me', component: AboutMeComponent },
   { path: 'travel', component: TravelComponent },
+  { path: 'travel/:id', component: TravelPostComponent },
   { path: 'cooking', component: CookingComponent },
   { path: 'cooking/:id', component: CookingPostComponent },
   { path: 'blogger', component: BloggerComponent },
