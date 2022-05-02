@@ -33,3 +33,10 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+.add-button {
+    cursor: pointer;
+    max-width: 15vw;
+    max-height: 15vw;
+    align-self: center;
+}
