@@ -1,0 +1,132 @@
+.summary-about-self-container {
+    margin-bottom: 2em;
+}
+
+.summary-about-self {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.summary-about-self-paragraph-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* .summary-about-self-paragraph {
+    max-width: 35%;
+} */
+
+.ly-photo-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ly-photo {
+    width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+}
+
+/* Movie App Project */
+.movie-project{
+    margin-bottom: 2em;
+}
+
+
+.movie-project-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.movie-project-paragraph {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.movie-project-photo-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie-project-photo-1{
+    width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+}
+
+
+/* Android project */
+.android-project{
+    margin-bottom: 2em;
+}
+
+
+.android-project-paragraph-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.android-project-paragraph-summary-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-expense-tracker-photo-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-expense-tracker-photo-1{
+    width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+}
+
+
+/* Music Project */
+
+.music-project{
+    margin-bottom: 2em;
+}
+
+
+.music-project-summary-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.music-project-summary-paragraph-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.music-photo-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.music-photo{
+    max-width: 25%;
+    height: auto;
+}
+

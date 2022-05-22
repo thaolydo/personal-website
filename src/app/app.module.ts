@@ -23,6 +23,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { TravelPostComponent } from './pages/travel-post/travel-post.component';
 import { AddPostDialogComponent } from './components/add-post-dialog/add-post-dialog.component';
+import { MatRippleModule } from '@angular/material/core';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,10 @@ import { AddPostDialogComponent } from './components/add-post-dialog/add-post-di
     MatGridListModule,
     MatIconModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatRippleModule,
+    MatDividerModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
