@@ -1,5 +1,5 @@
 export interface TravelPost {
-    id: string;
+    pid: string;
     title: string;
     description: string;
     imageUrl: string;

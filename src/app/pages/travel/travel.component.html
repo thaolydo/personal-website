@@ -1,5 +1,5 @@
 <div class="container">
-    <mat-card *ngFor="let post of travelPosts" class="post" [routerLink]="'/travel/' + post.id">
+    <mat-card *ngFor="let post of travelPosts" class="post" [routerLink]="'/travel/' + post.pid">
         <div class="img-container">
             <img [src]="post.imageUrl">
         </div>
