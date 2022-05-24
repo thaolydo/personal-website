@@ -6,6 +6,10 @@
     max-height: 100%;
 }
 
+.spinner {
+    align-self: center;
+}
+
 h1 {
     align-self: center;
 }

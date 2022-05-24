@@ -24,6 +24,8 @@ import { TravelPostComponent } from './pages/travel-post/travel-post.component';
 import { AddPostDialogComponent } from './components/add-post-dialog/add-post-dialog.component';
 import { MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatInputModule,
     MatRippleModule,
     MatDividerModule,
+    MatProgressSpinnerModule
+
 
   ],
   providers: [],

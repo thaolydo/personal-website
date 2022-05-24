@@ -1,4 +1,5 @@
 <div class="container">
+    <mat-spinner class="spinner" *ngIf="loadingPosts"></mat-spinner>
     <h1>{{cookingPost?.title}}</h1>
     <div class="img-container">
         <img [src]="cookingPost?.imageUrl">

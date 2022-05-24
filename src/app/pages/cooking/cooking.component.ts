@@ -11,6 +11,7 @@ import { CookingService } from 'src/app/services/cooking.service';
 })
 export class CookingComponent implements OnInit {
   cookingPosts: CookingPost[];
+  loadingPosts: boolean = true;
 
 
   constructor(private cookingService: CookingService,
@@ -18,7 +19,9 @@ export class CookingComponent implements OnInit {
     ) { }
 
   async ngOnInit()  {
+    this.loadingPosts = true;
     this.cookingPosts = await this.cookingService.getCookingPosts();
+    this.loadingPosts = false;
   }
 
   async addNewTravelPost() {

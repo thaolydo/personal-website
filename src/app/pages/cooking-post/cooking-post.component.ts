@@ -11,13 +11,17 @@ import { CookingService } from 'src/app/services/cooking.service';
 export class CookingPostComponent implements OnInit {
   cookingPost: CookingPost;
 
+  loadingPosts: boolean = true;
+
   constructor(
     private route: ActivatedRoute,
     private cookingService: CookingService) { }
 
   async ngOnInit() {
     const id = this.route.snapshot.params['id'];
+    this.loadingPosts = true;
     this.cookingPost = await this.cookingService.getCookingPost(id);
+    this.loadingPosts = false;
   }
 
 }

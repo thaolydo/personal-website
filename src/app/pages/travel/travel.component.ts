@@ -12,13 +12,17 @@ import { TravelService } from 'src/app/services/travel.service';
 export class TravelComponent implements OnInit {
   travelPosts: TravelPost[];
 
+  loadingPosts: boolean = true;
+
   constructor(
     private travelService: TravelService,
     private dialog: MatDialog
   ) { }
 
   async ngOnInit() {
+    this.loadingPosts = true;
     this.travelPosts = await this.travelService.getTravelPosts();
+    this.loadingPosts = false;
   }
 
   async addNewTravelPost() {

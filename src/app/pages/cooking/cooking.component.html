@@ -1,4 +1,5 @@
 <div class="container">
+    <mat-spinner class="spinner" *ngIf="loadingPosts"></mat-spinner>
     <mat-card *ngFor="let post of cookingPosts" class="post" [routerLink]="'/cooking/' + post.pid">
         <div class="img-container">
             <img [src]="post.imageUrl">
