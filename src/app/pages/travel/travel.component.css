@@ -16,6 +16,12 @@ mat-card {
     max-height: auto;
     overflow-y: scroll;
     cursor: pointer;
+
+    transition: transform .2s;
+}
+
+mat-card:hover {
+    transform: scale(1.05);
 }
 
 mat-card-header {
@@ -43,4 +49,10 @@ img {
     max-width: 15vw;
     max-height: 15vw;
     align-self: center;
+
+    transition: transform .2s;
+}
+
+.add-button:hover {
+    transform: scale(1.1);
 }
