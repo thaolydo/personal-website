@@ -1,5 +1,14 @@
 <div class="container">
-    <mat-spinner class="spinner" *ngIf="loadingPosts"></mat-spinner>
+    <mat-spinner class="spinner" *ngIf="loadingPost"></mat-spinner>
+    <div class="action-buttons">
+        <button color="warn" mat-fab (click)="deletePost()" [disabled]="deleteingPost">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <button color="primary" mat-fab (click)="editPost()">
+            <mat-icon>border_color</mat-icon>
+        </button>
+    </div>
+    <mat-spinner class="spinner" *ngIf="deleteingPost"></mat-spinner>
     <h1>{{travelPost?.title}}</h1>
     <div class="img-container">
         <img [src]="travelPost?.imageUrl">

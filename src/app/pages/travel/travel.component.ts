@@ -12,7 +12,7 @@ import { TravelService } from 'src/app/services/travel.service';
 export class TravelComponent implements OnInit {
   travelPosts: TravelPost[];
 
-  loadingPosts: boolean = true;
+  loadingPosts: boolean = false;
 
   constructor(
     private travelService: TravelService,

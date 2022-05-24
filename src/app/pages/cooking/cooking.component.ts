@@ -11,7 +11,7 @@ import { CookingService } from 'src/app/services/cooking.service';
 })
 export class CookingComponent implements OnInit {
   cookingPosts: CookingPost[];
-  loadingPosts: boolean = true;
+  loadingPosts: boolean = false;
 
 
   constructor(private cookingService: CookingService,

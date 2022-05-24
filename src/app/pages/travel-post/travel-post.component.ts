@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TravelPost } from 'src/app/models/travel-post.model';
 import { TravelService } from 'src/app/services/travel.service';
 
@@ -11,17 +11,31 @@ import { TravelService } from 'src/app/services/travel.service';
 export class TravelPostComponent implements OnInit {
   travelPost: TravelPost;
 
-  loadingPosts: boolean = true;
+  loadingPost: boolean = true;
+  deleteingPost: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private travelService: TravelService) { }
 
   async ngOnInit() {
     const id = this.route.snapshot.params['id'];
-    this.loadingPosts = true;
+    this.loadingPost = true;
     this.travelPost = await this.travelService.getTravelPost(id);
-    this.loadingPosts = false;
+    this.loadingPost = false;
+  }
+
+  async deletePost() {
+    this.deleteingPost = true;
+    const id = this.route.snapshot.params['id'];
+    await this.travelService.deleteTravelPost(id);
+    this.router.navigate(['/travel']);
+    this.deleteingPost = false;
+  }
+
+  editPost() {
+
   }
 
 }

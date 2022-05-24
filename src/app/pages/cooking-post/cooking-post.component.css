@@ -55,3 +55,14 @@ img {
         opacity: 100%;
     }
 }
+
+.action-buttons {
+    position: fixed;
+    bottom: 3em;
+    right: 20%;
+
+}
+
+button {
+    margin-left: 0.5em;
+}
