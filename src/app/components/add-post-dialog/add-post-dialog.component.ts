@@ -17,11 +17,13 @@ export class AddPostDialogComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    const post  = this.data.post;
     this.form = this.fb.group({
-      title: '',
-      description: '',
-      imageUrl: ''
+      title: post?.title,
+      description: post?.description,
+      imageUrl: post?.imageUrl
     });
+
   }
 
 }

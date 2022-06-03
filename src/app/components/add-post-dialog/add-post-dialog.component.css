@@ -1,0 +1,13 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-dialog-actions {
+    justify-content: flex-end;
+}
+
+button {
+    margin-right: 0.2em;
+    width: 5em;
+}
