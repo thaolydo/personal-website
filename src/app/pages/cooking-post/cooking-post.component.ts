@@ -50,14 +50,15 @@ export class CookingPostComponent implements OnInit {
     });
 
     const updatedCookingPost: CookingPost = await dialogRef.afterClosed().toPromise();
-    this.cookingPost = {
-      ...this.cookingPost,
-      ...updatedCookingPost,
+    if (updatedCookingPost) {
+      this.cookingPost = {
+        ...this.cookingPost,
+        ...updatedCookingPost,
+      }
+      this.deleteingPost = true;
+      await this.cookingService.saveCookingPost(this.cookingPost);
+      this.deleteingPost = false;
     }
-    this.deleteingPost = true;
-    await this.cookingService.saveCookingPost(this.cookingPost);
-    this.deleteingPost = false;
-
   }
 
 }

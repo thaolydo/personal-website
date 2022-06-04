@@ -23,7 +23,7 @@
 </div> -->
 
 <div mat-dialog-actions>
-    <button mat-raised-button class="addbutton" [mat-dialog-close]="form.value">
+    <button mat-raised-button class="addbutton" [mat-dialog-close]="form.value" [disabled]="!form.dirty">
         <ng-container *ngIf="data.isAdding">Add</ng-container>
         <ng-container *ngIf="!data.isAdding">Edit</ng-container>
     </button>

@@ -50,13 +50,15 @@ export class TravelPostComponent implements OnInit {
     });
 
     const updatedTravelPost: TravelPost = await dialogRef.afterClosed().toPromise();
-    this.travelPost = {
-      ...this.travelPost,
-      ...updatedTravelPost,
+    if (updatedTravelPost) {
+      this.travelPost = {
+        ...this.travelPost,
+        ...updatedTravelPost,
+      }
+      this.deleteingPost = true;
+      await this.travelService.saveTravelPost(this.travelPost);
+      this.deleteingPost = false;
     }
-    this.deleteingPost = true;
-    await this.travelService.saveTravelPost(this.travelPost);
-    this.deleteingPost = false;
   }
 
 }
