@@ -10,3 +10,23 @@ body {
     font-family: "Margarine";
     font-size: 2vh;
 }
+
+.swiper {
+    width: 33vw;
+    height: 33vw;
+    position: relative;
+    /* left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px; */
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}

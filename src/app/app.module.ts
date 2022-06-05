@@ -25,6 +25,8 @@ import { AddPostDialogComponent } from './components/add-post-dialog/add-post-di
 import { MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { SwiperModule } from 'swiper/angular';
+
 
 
 @NgModule({
@@ -55,7 +57,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatInputModule,
     MatRippleModule,
     MatDividerModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    SwiperModule
 
 
   ],

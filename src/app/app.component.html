@@ -1,6 +1,15 @@
 <app-nav-bar></app-nav-bar>
-<div class="router-outlet-container">
-    <div class="page">
-        <router-outlet></router-outlet>
-    </div>
-</div>
+<!-- <swiper [effect]="'cube'" [grabCursor]="true" [cubeEffect]="{
+    shadow: true,
+    slideShadows: true,
+    shadowOffset: 20,
+    shadowScale: 0.94
+  }" [pagination]="true" class="mySwiper">
+    <ng-template swiperSlide><img src="assets/project-movie-1.png"></ng-template>
+    <ng-template swiperSlide><img src="assets/project-movie-2.png" /></ng-template>
+    <ng-template swiperSlide><img src="assets/project-movie-3.png" /></ng-template>
+    <ng-template swiperSlide><img src="assets/project-movie-4.png" /></ng-template>
+    <ng-template swiperSlide><img src="assets/project-movie-5.png" /></ng-template>
+</swiper> -->
+<router-outlet></router-outlet>
+
