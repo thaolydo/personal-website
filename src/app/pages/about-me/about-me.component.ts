@@ -10,6 +10,7 @@ export class AboutMeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(window.screen.availWidth)
   }
 
 }
