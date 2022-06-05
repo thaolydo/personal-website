@@ -54,12 +54,6 @@ a {
     color: inherit;
     text-decoration: inherit;
     margin: 0.2em;
-
-    transition: transform .2s;
-}
-
-a:hover {
-    transform: scale(1.5);
 }
 
 img {
