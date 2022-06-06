@@ -1,14 +1,15 @@
 :host {
     display: flex;
     flex-direction: column;
-    padding: 2em 5em;
+    padding: 1em 1em;
     justify-content: center;
 }
 
 .container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     overflow-y: scroll;
     max-height: 100%;
 }
@@ -19,7 +20,7 @@
 
 mat-card {
     margin: 1em;
-    max-width: 15vw;
+    max-width: 100%;
     max-height: auto;
     overflow-y: scroll;
     cursor: pointer;
@@ -45,9 +46,39 @@ img {
     height: auto;
 }
 
+.add-button-container {
+    max-width: 25%;
+    max-height: 25%;
+}
+
 .add-button {
-    cursor: pointer;
-    max-width: 15vw;
-    max-height: 15vw;
+    max-width: 100%;
+    max-height: 100%;
     align-self: center;
+}
+
+@media only screen and (min-width: 768px) {
+    /* Desktop */
+    :host {
+        padding: 2em 5em;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow-y: scroll;
+        max-height: 100%;
+    }
+
+    mat-card {
+        max-width: 15vw;
+    }
+
+    .add-button {
+        cursor: pointer;
+        max-width: 15vw;
+        max-height: 15vw;
+    }
 }
