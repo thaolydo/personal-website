@@ -35,8 +35,10 @@ export class CookingComponent implements OnInit {
     const newCookingPost: CookingPost = await dialogRef.afterClosed().toPromise();
     if (newCookingPost) {
       console.log('newTravelPost =', newCookingPost);
-      newCookingPost.pid = newCookingPost.title.toLowerCase().replace(' ', '-')
+      newCookingPost.pid = newCookingPost.title.toLowerCase().replace(' ', '-');
+      this.loadingPosts = true;
       await this.cookingService.saveCookingPost(newCookingPost);
+      this.loadingPosts = false;
       this.cookingPosts.push(newCookingPost);
     }
   }

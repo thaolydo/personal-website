@@ -1,5 +1,4 @@
 <div class="container">
-    <mat-spinner class="spinner" *ngIf="loadingPosts"></mat-spinner>
     <mat-card *ngFor="let post of cookingPosts" class="post gigantify-105" [routerLink]="'/cooking/' + post.pid">
         <div class="img-container">
             <img [src]="post.imageUrl">
@@ -11,6 +10,7 @@
             <p>{{post.description}}</p>
         </mat-card-content>
     </mat-card>
+    <mat-spinner class="spinner" *ngIf="loadingPosts"></mat-spinner>
 
      <!-- Add Button -->
      <div matRipple class="add-button-container">

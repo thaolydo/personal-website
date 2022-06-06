@@ -37,7 +37,9 @@ export class TravelComponent implements OnInit {
     if (newTravelPost) {
       console.log('newTravelPost =', newTravelPost);
       newTravelPost.pid = newTravelPost.title.toLowerCase().replace(' ', '-')
+      this.loadingPosts = true;
       await this.travelService.saveTravelPost(newTravelPost);
+      this.loadingPosts = false;
       this.travelPosts.push(newTravelPost);
     }
   }
