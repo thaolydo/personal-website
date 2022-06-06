@@ -3,48 +3,73 @@ mat-toolbar {
     justify-content: space-between;
 }
 
-.cooking, .travel, .blogger, .about-me {
-    margin: 1em;
-    font-size: x-large;
+.logo {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cooking,
+.travel,
+.blogger,
+.about-me {
+    margin: 0.25em;
+    font-size: large;
     font-family: 'Caveat';
     cursor: pointer;
     font-weight: 100;
     transition: font-size .2s;
 }
 
-.cooking:hover, .travel:hover, .blogger:hover, .about-me:hover {
-    font-size: xx-large;
-}
-
-/* .cooking:hover, .travel:hover, .about-me:hover {
+.cooking:hover,
+.travel:hover,
+.about-me:hover {
+    font-size: x-large;
     transform: scale(1.5);
-} */
-
-/* .travel {
-    margin: 1em;
-    font-size: small;
-    cursor: pointer;
-}
-
-.blogger {
-    margin: 1em;
-    font-size: small;
-    cursor: pointer;
-} */
-
-.logo {
-    font-weight: 500;
-    cursor: pointer;
 }
 
 .selected {
     font-weight: 900;
-    font-size: xx-large;
+    font-size: x-large !;
+}
+
+
+svg {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* Desktop */
+    .cooking,
+    .travel,
+    .blogger,
+    .about-me {
+        margin: 1em;
+        font-size: xx-large;
+    }
+
+    .cooking:hover,
+    .travel:hover,
+    .about-me:hover {
+        font-size: xxx-large;
+    }
+
+    .selected {
+        font-weight: 900;
+        font-size: xxx-large;
+    }
+
+    svg {
+        width: 2em;
+        height: 2em;
+    }
+
 }
 
 .links {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
 }
 
 a {
