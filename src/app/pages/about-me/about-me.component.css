@@ -179,6 +179,10 @@ a {
     align-self: center;
 }
 
+img {
+    border-radius: 1em;
+}
+
 @media only screen and (min-width: 768px) {
     /* Desktop */
 
