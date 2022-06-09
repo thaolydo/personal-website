@@ -43,6 +43,10 @@ a {
     width: 100%;
 }
 
+.summary-about-self-paragraph {
+    font-style: italic;
+}
+
 .ly-photo-container {
     display: flex;
     flex-direction: column;
@@ -183,6 +187,10 @@ img {
     border-radius: 1em;
 }
 
+p {
+    line-height: 2em;
+}
+
 @media only screen and (min-width: 768px) {
     /* Desktop */
 
@@ -198,10 +206,6 @@ img {
     .summary-about-self-paragraph-container {
         width: 50%;
     }
-
-    /* .summary-about-self-paragraph {
-        max-width: 35%;
-    } */
 
     .ly-photo-container {
         width: 50%;
