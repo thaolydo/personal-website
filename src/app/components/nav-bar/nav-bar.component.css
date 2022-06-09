@@ -1,6 +1,7 @@
 mat-toolbar {
     display: flex;
     justify-content: space-between;
+    background-color: lightpink;
 }
 
 .logo {
@@ -13,25 +14,27 @@ mat-toolbar {
 .blogger,
 .about-me {
     margin: 0.25em;
-    font-size: large;
-    font-family: 'Caveat';
+    font-size: medium;
+    font-family: 'Dosis';
     cursor: pointer;
     font-weight: 100;
     transition: font-size .2s;
+    color: white;
+    font-weight: normal;
 }
 
 .cooking:hover,
 .travel:hover,
 .about-me:hover {
-    font-size: x-large;
+    font-size: large;
     transform: scale(1.5);
+    font-weight: bolder;
 }
 
 .selected {
-    font-weight: 900;
-    font-size: x-large !;
+    font-size: large;
+    font-weight: bolder;
 }
-
 
 svg {
     width: 1.5em;
@@ -46,18 +49,19 @@ svg {
     .blogger,
     .about-me {
         margin: 1em;
-        font-size: xx-large;
+        font-size: x-large;
     }
 
     .cooking:hover,
     .travel:hover,
     .about-me:hover {
-        font-size: xxx-large;
+        font-size: xx-large;
+        font-weight: medium;
     }
 
     .selected {
-        font-weight: 900;
-        font-size: xxx-large;
+        font-size: xx-large;
+        font-weight: medium;
     }
 
     svg {
