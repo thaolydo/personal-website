@@ -64,6 +64,26 @@
     <div class="android-project">
         <h3>Expense Tracker Android App</h3>
         <div class="android-project-container">
+            <!-- Summary -->
+            <div class="android-project-paragraph-summary-container">
+                <p class="android-project-paragraph-summary">
+                    <li>
+                        Expense Tracker application will keep track of the income-expense of a user on a day-to-day
+                        basis.
+                    </li>
+                    <li>
+                        The application contains a calculator that takes income (annually), maximum daily expense, and
+                        the amount of saving a user plans to reach annually as inputs and calculates the amount of
+                        saving.
+                    </li>
+                    <li>
+                        The expense tracking application will generate a report at the end of a month to show income
+                        expense
+                        via multiple graphs.
+                    </li>
+                </p>
+            </div>
+
             <!-- Demo -->
             <div class="demo">
                 <!-- Photo -->
@@ -74,9 +94,12 @@
                             shadowOffset: 20,
                             shadowScale: 0.94
                           }" [pagination]="true" class="mySwiper">
-                        <ng-template swiperSlide><img class="mat-elevation-z8" src="assets/project-expense-tracker-1.png"></ng-template>
-                        <ng-template swiperSlide><img class="mat-elevation-z8" src="assets/project-expense-tracker-2.png"></ng-template>
-                        <ng-template swiperSlide><img class="mat-elevation-z8" src="assets/project-expense-tracker-3.png"></ng-template>
+                        <ng-template swiperSlide><img class="mat-elevation-z8"
+                                src="assets/project-expense-tracker-1.png"></ng-template>
+                        <ng-template swiperSlide><img class="mat-elevation-z8"
+                                src="assets/project-expense-tracker-2.png"></ng-template>
+                        <ng-template swiperSlide><img class="mat-elevation-z8"
+                                src="assets/project-expense-tracker-3.png"></ng-template>
                     </swiper>
                 </div>
 
@@ -90,23 +113,6 @@
                         </svg>
                     </a>
                 </div>
-            </div>
-
-            <!-- Summary -->
-            <div class="android-project-paragraph-summary-container">
-                <p class="android-project-paragraph-summary">
-                    <li>
-                        Expense Tracker application will keep track of the income-expense of a user on a day-to-day basis.
-                    </li>
-                    <li>
-                        The application contains a calculator that takes income (annually), maximum daily expense, and
-                        the amount of saving a user plans to reach annually as inputs and calculates the amount of saving.
-                    </li>
-                    <li>
-                        The expense tracking application will generate a report at the end of a month to show income expense
-                        via multiple graphs.
-                    </li>
-                </p>
             </div>
         </div>
     </div>
@@ -150,8 +156,10 @@
 <!-- Skills -->
 <div class="skills-container">
     <h2>Skills</h2>
+    <p style="margin-bottom: 1em;">
+        <span style="text-decoration: underline;">Backend</span>: NodeJS, AWS Services, DynamoDB, Java, Spring Boot, MEAN stack, Google Guice, PostgreSQL, Python.
+    </p>
     <p>
-        Backend: NodeJS, AWS Services, DynamoDB, Java, Spring Boot, MEAN stack, Google Guice, PostgreSQL, Python.
-        Frontend: Angular, TypeScript, HTML, CSS, Android SDK.
+        <span style="text-decoration: underline;">Frontend</span>: Angular, TypeScript, HTML, CSS, Android SDK.
     </p>
 </div>

@@ -204,7 +204,7 @@ a {
     }
 
     .movie-project-container {
-        flex-direction: row;
+        flex-direction: row-reverse;
         justify-content: space-between;
     }
 
@@ -261,7 +261,7 @@ a {
     }
 
     .music-project-container {
-        flex-direction: row;
+        flex-direction: row-reverse;
         justify-content: space-between;
     }
 
