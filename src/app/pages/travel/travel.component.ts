@@ -36,7 +36,7 @@ export class TravelComponent implements OnInit {
     const newTravelPost: TravelPost = await dialogRef.afterClosed().toPromise();
     if (newTravelPost) {
       console.log('newTravelPost =', newTravelPost);
-      newTravelPost.pid = newTravelPost.title.toLowerCase().replace(' ', '-')
+      newTravelPost.pid = newTravelPost.title.toLowerCase().replace(/\s/g, '-')
       this.loadingPosts = true;
       await this.travelService.saveTravelPost(newTravelPost);
       this.loadingPosts = false;
