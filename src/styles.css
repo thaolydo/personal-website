@@ -11,7 +11,7 @@ body {
     /* font-family: Roboto, "Helvetica Neue", sans-serif; */
     font-family: 'Lora', 'Arial';
     font-size: 2vh;
-    background: url('https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/asnxytwc/e0749eb3-abe8-46b2-a728-932ddac5c6bd') no-repeat center center fixed;
+    background: url('assets/background.avif') no-repeat center center fixed;
     background-size: cover;
     
 }
