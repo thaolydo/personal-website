@@ -1,12 +1,17 @@
 mat-toolbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: lightpink;
+    min-height: 10vw;
 }
 
 .logo {
-    font-weight: 500;
+    object-fit: cover;
     cursor: pointer;
+    border-radius: 0.5em;
+    width: 10vw;
+    height: 10vw;
 }
 
 .cooking,
@@ -44,6 +49,16 @@ svg {
 @media only screen and (min-width: 768px) {
 
     /* Desktop */
+    mat-toolbar {
+        min-height: 5vw;
+    }
+
+    .logo {
+        border-radius: 1em;
+        width: 5vw;
+        height: 5vw;
+    }
+
     .cooking,
     .travel,
     .blogger,
@@ -83,9 +98,4 @@ a {
     color: inherit;
     text-decoration: inherit;
     margin: 0.2em;
-}
-
-img {
-    max-width: 1em;
-    height: auto;
 }
