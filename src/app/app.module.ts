@@ -26,7 +26,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SwiperModule } from 'swiper/angular';
-
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -58,9 +58,8 @@ import { SwiperModule } from 'swiper/angular';
     MatRippleModule,
     MatDividerModule,
     MatProgressSpinnerModule,
-    SwiperModule
-
-
+    SwiperModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

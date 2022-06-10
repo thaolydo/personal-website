@@ -1,8 +1,9 @@
 :host {
     display: flex;
     flex-direction: column;
-    padding: 2em 5em;
+    padding: 1em 1em;
     justify-content: center;
+    position: relative;
 }
 
 .container {
@@ -18,18 +19,22 @@
 }
 
 h1 {
-    align-self: center;
+    display: flex;
+    flex-direction: row;
+    font-size: x-large;
+    width: 100%;
+    justify-content: center;
 }
 
 .img-container {
     align-self: center;
-    aspect-ratio: 1/1;
-    overflow: hidden;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 img {
     max-width: 100%;
-    height: auto;
+    max-height: auto;
     animation-name: fadein;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
@@ -39,6 +44,25 @@ img {
 .description {
     align-self: center;
 }
+
+.action-buttons {
+    position: absolute;
+    right: 1em;
+    align-self: flex-end;
+}
+
+.action-buttons button {
+    margin-left: 0.5em;
+}
+
+/* .mat-button-wrapper {
+    height: 2em;
+}
+
+mat-icon {
+    width: 1em;
+    height: 1em;
+} */
 
 @keyframes fadein {
     0% {
@@ -62,12 +86,27 @@ img {
     }
 }
 
-.action-buttons {
-    position: fixed;
-    bottom: 3em;
-    right: 20%;
-}
+@media only screen and (min-width: 768px) {
+    /* Desktop */
+    :host {
+        padding: 2em 7em;
+    }
 
-button {
-    margin-left: 0.5em;
+    h1 {
+        font-size: xx-large;
+    }
+
+    .img-container {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    .action-buttons {
+        right: 7em;
+    }
+
+    .action-buttons button {
+        margin-left: 0.5em;
+    }
+    
 }
