@@ -35,12 +35,25 @@ export class TravelService {
     const data: any = await this.httpClient.get(this.travelApiUrl).toPromise();
     return data.travelPosts;
   }
-    
-    async getTravelPost(id: string): Promise<TravelPost> {
-      // const travelPosts = JSON.parse(localStorage.getItem('travelPosts'));
-      // return Promise.resolve(travelPosts[id]);
-      const data: any = await this.httpClient.get(`${this.travelApiUrl}/${id}`).toPromise();
-      return data.travelPost;
+
+  async getTravelPost(id: string): Promise<TravelPost> {
+    // const travelPosts = JSON.parse(localStorage.getItem('travelPosts'));
+    // return Promise.resolve(travelPosts[id]);
+    const data: any = await this.httpClient.get(`${this.travelApiUrl}/${id}`).toPromise();
+    return data.travelPost;
+  }
+
+  async uploadImage(fileName: string, imageType: string, data: string): Promise<string> {
+    console.log('Uploading image');
+    const res = await this.httpClient.post<any>(`${this.travelApiUrl}/upload-image`, data, {
+      params: {
+        fileName,
+        'imageType': imageType,
+      }
+    }).toPromise();
+
+    return res.imageUrl;
+    // return 'https://natashaskitchen.com/wp-content/uploads/2020/10/Egg-Rolls-7-728x1092.jpg';
   }
 
   saveTravelPost(travelPost: TravelPost): Promise<void> {

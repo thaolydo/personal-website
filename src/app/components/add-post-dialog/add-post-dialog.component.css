@@ -3,11 +3,44 @@ form {
     flex-direction: column;
 }
 
+.upload-image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.upload-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    width: 5em;
+    flex-grow: 1;
+}
+
+img {
+    width: 75%;
+    height: auto;
+}
+
+.uploading-text {
+    font-style: italic;
+}
+
+.uploading-spinner {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
 .mat-dialog-actions {
     justify-content: flex-end;
 }
 
-button {
+.action-button {
     margin-right: 0.2em;
     width: 5em;
 }
