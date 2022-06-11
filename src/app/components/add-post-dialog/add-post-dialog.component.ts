@@ -1,7 +1,7 @@
 import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { TravelService } from 'src/app/services/travel.service';
+import { UploadImageService } from 'src/app/services/upload-image.service';
 
 @Component({
   selector: 'app-add-post-dialog',
@@ -19,7 +19,7 @@ export class AddPostDialogComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder,
-    private travelService: TravelService,
+    private uploadImageService: UploadImageService,
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +36,7 @@ export class AddPostDialogComponent implements OnInit {
     const inputElement = this.imageUploadInput!.nativeElement;
     const fileReader = new FileReader();
     const imgElem = this.img.nativeElement;
+    const postType = this.data.postType;
     inputElement.onchange = (event: any) => {
       console.log('On file selected');
       const file = event.target.files[0];
@@ -55,7 +56,7 @@ export class AddPostDialogComponent implements OnInit {
         this.uploadingImage = true;
         imgElem.src = URL.createObjectURL(file);
         try {
-          const imageUrl = await this.travelService.uploadImage(fileName, imageType, base64Data);
+          const imageUrl = await this.uploadImageService.uploadImage(postType, fileName, imageType, base64Data);
           imgElem.src = imageUrl;
           console.log('imageUrl =', imageUrl);
           this.form.get('imageUrl').setValue(imageUrl);

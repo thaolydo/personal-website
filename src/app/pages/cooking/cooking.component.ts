@@ -27,6 +27,7 @@ export class CookingComponent implements OnInit {
   async addNewTravelPost() {
     const dialogRef = this.dialog.open(AddPostDialogComponent, {
       data: {
+        postType: 'cooking',
         title: 'Adding new Cooking Post',
         isAdding: true
       }
