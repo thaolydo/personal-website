@@ -1,17 +1,28 @@
 <div class="container">
     <mat-spinner class="spinner" *ngIf="loadingPost"></mat-spinner>
-    <div class="action-buttons">
-        <button color="warn" mat-fab (click)="deletePost()" [disabled]="deleteingPost">
-            <mat-icon>delete</mat-icon>
-        </button>
-        <button color="primary" mat-fab (click)="editPost()">
-            <mat-icon>border_color</mat-icon>
-        </button>
-    </div>
     <mat-spinner class="spinner" *ngIf="deleteingPost"></mat-spinner>
-    <h1>{{cookingPost?.title}}</h1>
+    <h1>{{cookingPost?.title}}
+        <!-- Action buttons -->
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="action-buttons">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="deletePost()" [disabled]="deleteingPost">
+                <mat-icon color="warn">delete</mat-icon>
+                <span>Delete Post</span>
+            </button>
+            <button mat-menu-item (click)="editPost()">
+                <mat-icon color="primary">border_color</mat-icon>
+                <span>Edit Post</span>
+            </button>
+        </mat-menu>
+    </h1>
+
+    <!-- Image -->
     <div class="img-container">
         <img [src]="cookingPost?.imageUrl">
     </div>
+
+    <!-- Description -->
     <p class="description">{{cookingPost?.description}}</p>
 </div>
