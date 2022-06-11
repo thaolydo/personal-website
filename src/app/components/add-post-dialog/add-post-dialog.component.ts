@@ -23,13 +23,12 @@ export class AddPostDialogComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const post  = this.data.post;
+    const post = this.data.post;
     this.form = this.fb.group({
       title: post?.title,
       description: post?.description,
       imageUrl: post?.imageUrl
     });
-
   }
 
   ngAfterViewInit() {
@@ -70,6 +69,11 @@ export class AddPostDialogComponent implements OnInit {
 
       // Mark form as dirty
       this.form.markAsDirty();
+    }
+
+    // If editing, load the image
+    if (!this.data.isAdding) {
+      imgElem.src = this.data.post.imageUrl;
     }
   }
 
