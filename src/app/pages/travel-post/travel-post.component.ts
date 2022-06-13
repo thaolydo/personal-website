@@ -45,7 +45,8 @@ export class TravelPostComponent implements OnInit {
       data: {
         title: 'Edit Travel Post',
         isAdding: false,
-        post: this.travelPost
+        post: this.travelPost,
+        postType: 'travel'
       }
     });
 

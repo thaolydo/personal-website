@@ -28,7 +28,7 @@ export class CookingPostComponent implements OnInit {
     this.cookingPost = await this.cookingService.getCookingPost(id);
     this.loadingPost = false;
   }
-  
+
   async deletePost() {
     if (!window.confirm('Are you sure you want to delete this post?')) {
       return;
@@ -45,7 +45,8 @@ export class CookingPostComponent implements OnInit {
       data: {
         title: 'Edit Cooking Post',
         isAdding: false,
-        post: this.cookingPost
+        post: this.cookingPost,
+        postType: 'cooking'
       }
     });
 

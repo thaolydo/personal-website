@@ -1,6 +1,6 @@
 import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UploadImageService } from 'src/app/services/upload-image.service';
 
 @Component({
@@ -10,13 +10,14 @@ import { UploadImageService } from 'src/app/services/upload-image.service';
 })
 export class AddPostDialogComponent implements OnInit {
 
-  @ViewChild('imageUploadInput') imageUploadInput: ElementRef<HTMLInputElement>;
   @ViewChild('img') img: ElementRef<HTMLImageElement>;
+  selectedFile: File;
   uploadingImage: boolean = false;
-
+  savingPost: boolean = false;
   form: FormGroup;
 
   constructor(
+    private dialogRef: MatDialogRef<AddPostDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder,
     private uploadImageService: UploadImageService,
@@ -25,62 +26,44 @@ export class AddPostDialogComponent implements OnInit {
   ngOnInit(): void {
     const post = this.data.post;
     this.form = this.fb.group({
-      title: post?.title,
-      description: post?.description,
-      imageUrl: post?.imageUrl
+      title: [post?.title, Validators.required],
+      description: [post?.description, Validators.required],
+      imageUrl: post?.imageUrl,
     });
   }
 
-  ngAfterViewInit() {
-    const inputElement = this.imageUploadInput!.nativeElement;
-    const fileReader = new FileReader();
-    const imgElem = this.img.nativeElement;
-    const postType = this.data.postType;
-    inputElement.onchange = (event: any) => {
-      console.log('On file selected');
-      const file = event.target.files[0];
-      if (!file) {
-        return;
-      }
-      console.log('file =', file);
-      fileReader.onload = async (e) => {
-        console.log('file loaded');
-        // Extract info for the image
-        const base64 = fileReader.result as string;
-        const tmp = base64.split(',');
-        const imageType = tmp[0].split(';')[0].split('/')[1];
-        const base64Data = tmp[1];
-        const fileName = file.name;
-
-        this.uploadingImage = true;
-        imgElem.src = URL.createObjectURL(file);
-        try {
-          const imageUrl = await this.uploadImageService.uploadImage(postType, fileName, imageType, base64Data);
-          imgElem.src = imageUrl;
-          console.log('imageUrl =', imageUrl);
-          this.form.get('imageUrl').setValue(imageUrl);
-        } catch (e) {
-          console.error(e);
-          alert('Unable to upload the image. Please try a different image.');
-        }
-        this.uploadingImage = false;
-      };
-      fileReader.readAsDataURL(file);
-
-      // Mark form as dirty
-      this.form.markAsDirty();
+  onFileSelected(file: File) {
+    if (!file) {
+      return;
     }
-
-    // If editing, load the image
-    if (!this.data.isAdding) {
-      imgElem.src = this.data.post.imageUrl;
-    }
+    this.img.nativeElement.src = URL.createObjectURL(file);
+    this.selectedFile = file;
+    this.form.markAsDirty();
   }
 
-  onUploadImage() {
-    console.log(`Uploading image`);
-    const inputElement = this.imageUploadInput!.nativeElement;
-    inputElement.click();
+  async onSave() {
+    if (!this.selectedFile) {
+      return;
+    }
+
+    // Upload the image
+    this.uploadingImage = true;
+    this.dialogRef.disableClose = true;
+    try {
+      const fileExtension = this.selectedFile.name.split('.').pop();
+      const fileName = `${this.form.get('title').value.toLowerCase().replace(/\s/g, '-')}.${fileExtension}`;
+      const signedUrlResponse = await this.uploadImageService.getSignedUrl(this.data.postType, fileName, this.selectedFile.type);
+      await this.uploadImageService.uploadToSignedUrl(signedUrlResponse.signedUrl, this.selectedFile.type, this.selectedFile);
+      this.form.get('imageUrl').setValue(`https://peronsal-website-storage.s3.us-west-1.amazonaws.com/${signedUrlResponse.key}`);
+    } catch (e) {
+      console.error(e);
+      alert('Unable to upload the image. Please try again.');
+    } finally {
+      this.dialogRef.disableClose = false;
+      this.uploadingImage = false;
+    }
+
+    this.dialogRef.close(this.form.value);
   }
 
 }
