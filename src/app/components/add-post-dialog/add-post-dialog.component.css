@@ -15,6 +15,11 @@ form {
     margin-bottom: 1em;
 }
 
+.image-upload-input {
+    visibility: hidden;
+    width: 0 !important;
+}
+
 .image-container {
     display: flex;
     justify-content: center;

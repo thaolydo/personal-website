@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -36,6 +37,10 @@ export class AddPostDialogComponent implements OnInit {
     if (!file) {
       return;
     }
+    if (file.size >= 10_000_000) {
+      alert('File size must not exceed 10MB.');
+      return;
+    }
     this.img.nativeElement.src = URL.createObjectURL(file);
     this.selectedFile = file;
     this.form.markAsDirty();
@@ -53,11 +58,19 @@ export class AddPostDialogComponent implements OnInit {
       const fileExtension = this.selectedFile.name.split('.').pop();
       const fileName = `${this.form.get('title').value.toLowerCase().replace(/\s/g, '-')}.${fileExtension}`;
       const signedUrlResponse = await this.uploadImageService.getSignedUrl(this.data.postType, fileName, this.selectedFile.type);
-      await this.uploadImageService.uploadToSignedUrl(signedUrlResponse.signedUrl, this.selectedFile.type, this.selectedFile);
-      this.form.get('imageUrl').setValue(`https://peronsal-website-storage.s3.us-west-1.amazonaws.com/${signedUrlResponse.key}`);
+      await this.uploadImageService.uploadToSignedPostUrl(signedUrlResponse.url, this.selectedFile.type, signedUrlResponse.fields, this.selectedFile);
+      this.form.get('imageUrl').setValue(`https://peronsal-website-storage.s3.us-west-1.amazonaws.com/${signedUrlResponse.fields.key}`);
     } catch (e) {
-      console.error(e);
-      alert('Unable to upload the image. Please try again.');
+      console.error('Unable to upload the image', e);
+      if (e instanceof HttpErrorResponse) {
+        if ((e.error as string).includes('exceeds the maximum allowed size')) {
+          alert('File must not exceed 30MB.');
+        }
+      } else {
+        alert('Unable to upload the image. Please try again.');
+      }
+      this.dialogRef.close();
+      return;
     } finally {
       this.dialogRef.disableClose = false;
       this.uploadingImage = false;

@@ -16,8 +16,6 @@
             <button mat-raised-button class="upload-button" (click)="imageUploadInput.click()">
                 <mat-icon>file_upload</mat-icon>
                 <span>Upload Image</span>
-                <input #imageUploadInput type="file" style="visibility: hidden;"
-                    (change)="onFileSelected($event.target.files[0])">
             </button>
             <div class="image-container">
                 <img #img>
@@ -38,3 +36,5 @@
     </button>
     <button mat-raised-button mat-dialog-close class="action-button">Cancel</button>
 </div>
+
+<input #imageUploadInput type="file" class="image-upload-input" (change)="onFileSelected($event.target.files[0])">

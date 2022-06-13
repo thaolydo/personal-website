@@ -38,6 +38,7 @@ export class UploadImageService {
         }).toPromise();
     }
 
+    // Deprecated in favor of uploadToSignedPostUrl below
     uploadToSignedUrl(signedUrl: string, contentType: string, blob: Blob) {
         console.log('Uploading to signed url');
         return this.httpClient.put(signedUrl, blob, {
@@ -46,9 +47,28 @@ export class UploadImageService {
             },
         }).toPromise();
     }
+
+    // https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/modules/_aws_sdk_s3_presigned_post.html
+    uploadToSignedPostUrl(signedUrl: string, contentType: string, fields: any, blob: Blob) {
+        console.log('Uploading to signed url POST');
+
+        // Generatinig form data following this post: https://www.webiny.com/blog/upload-files-to-aws-s3-using-pre-signed-post-data-and-a-lambda-function-7a9fb06d56c1
+        const formData = new FormData();
+        Object.keys(fields).forEach(key => {
+            formData.append(key, fields[key]);
+        });
+        formData.append('acl', 'public-read');
+
+        // Actual file has to be appended last.
+        formData.append("file", blob);
+        return this.httpClient.post(signedUrl, formData).toPromise();
+    }
+
 }
 
 export interface GetSignedUrlResponse {
-    key: string;
-    signedUrl: string;
+    // key: string; // only used for getSignedUrl PUT flow
+    // signedUrl: string; // only used for getSignedUrl PUT flow
+    url: string;
+    fields: { [key: string]: string };
 }
