@@ -33,6 +33,16 @@ export class AddPostDialogComponent implements OnInit {
     });
   }
 
+  // This is for loading the image during edit
+  ngAfterViewInit() {
+    // Skip if not editing
+    if (this.data.isAdding) {
+      return;
+    }
+
+    this.img.nativeElement.src = this.data.post.imageUrl;
+  }
+
   onFileSelected(file: File) {
     if (!file) {
       return;
@@ -48,6 +58,7 @@ export class AddPostDialogComponent implements OnInit {
 
   async onSave() {
     if (!this.selectedFile) {
+      this.dialogRef.close(this.form.value);
       return;
     }
 
@@ -75,7 +86,6 @@ export class AddPostDialogComponent implements OnInit {
       } else {
         alert('Unable to upload the image. Please try again.');
       }
-      this.dialogRef.close();
       return;
     } finally {
       this.dialogRef.disableClose = false;
