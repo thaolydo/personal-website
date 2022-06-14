@@ -62,6 +62,7 @@ export class AddPostDialogComponent implements OnInit {
       } else {
         fileName = `${this.data.post.pid}.${fileExtension}`;
       }
+      console.log('fileName =', fileName);
       const signedUrlResponse = await this.uploadImageService.getSignedUrl(this.data.postType, fileName, this.selectedFile.type);
       await this.uploadImageService.uploadToSignedPostUrl(signedUrlResponse.url, this.selectedFile.type, signedUrlResponse.fields, this.selectedFile);
       this.form.get('imageUrl').setValue(`https://peronsal-website-storage.s3.us-west-1.amazonaws.com/${signedUrlResponse.fields.key}`);

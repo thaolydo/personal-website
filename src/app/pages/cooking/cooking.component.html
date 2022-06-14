@@ -1,7 +1,7 @@
 <div class="container">
     <mat-card *ngFor="let post of cookingPosts" class="post gigantify-105" [routerLink]="'/cooking/' + post.pid">
         <div class="img-container">
-            <img [src]="post.imageUrl">
+            <img [src]="post.imageUrl.replace('personal-website-storage', 'personal-website-storage-thumbnails')">
         </div>
         <mat-card-header>
             <mat-card-title>{{post.title}}</mat-card-title>
