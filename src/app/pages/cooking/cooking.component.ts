@@ -39,8 +39,13 @@ export class CookingComponent implements OnInit {
       newCookingPost.pid = newCookingPost.title.trim().toLowerCase().replace(/\s/g, '-');
       this.loadingPosts = true;
       await this.cookingService.saveCookingPost(newCookingPost);
-      this.loadingPosts = false;
-      this.cookingPosts.push(newCookingPost);
+
+      // Wait 1.5s for the thumbnail to be generated before adding the new post
+      setTimeout(async () => {
+        console.log('add the new post');
+        this.cookingPosts.push(newCookingPost);
+        this.loadingPosts = false;
+      }, 3000);
     }
   }
 

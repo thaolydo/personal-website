@@ -40,8 +40,13 @@ export class TravelComponent implements OnInit {
       newTravelPost.pid = newTravelPost.title.trim().toLowerCase().replace(/\s/g, '-');
       this.loadingPosts = true;
       await this.travelService.saveTravelPost(newTravelPost);
-      this.loadingPosts = false;
-      this.travelPosts.push(newTravelPost);
+
+      // Wait 1.5s for the thumbnail to be generated before adding the new post
+      setTimeout(async () => {
+        console.log('add the new post');
+        this.travelPosts.push(newTravelPost);
+        this.loadingPosts = false;
+      }, 3000);
     }
   }
 
