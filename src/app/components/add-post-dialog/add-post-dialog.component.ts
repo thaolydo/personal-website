@@ -56,7 +56,7 @@ export class AddPostDialogComponent implements OnInit {
     this.dialogRef.disableClose = true;
     try {
       const fileExtension = this.selectedFile.name.split('.').pop();
-      const fileName = `${this.form.get('title').value.toLowerCase().replace(/\s/g, '-')}.${fileExtension}`;
+      const fileName = `${this.form.get('title').value.trim().toLowerCase().replace(/\s/g, '-')}.${fileExtension}`;
       const signedUrlResponse = await this.uploadImageService.getSignedUrl(this.data.postType, fileName, this.selectedFile.type);
       await this.uploadImageService.uploadToSignedPostUrl(signedUrlResponse.url, this.selectedFile.type, signedUrlResponse.fields, this.selectedFile);
       this.form.get('imageUrl').setValue(`https://peronsal-website-storage.s3.us-west-1.amazonaws.com/${signedUrlResponse.fields.key}`);
