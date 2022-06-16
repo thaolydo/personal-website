@@ -26,6 +26,7 @@ export class CookingComponent implements OnInit {
 
   async addNewCookingPost() {
     const dialogRef = this.dialog.open(AddPostDialogComponent, {
+      width: window.screen.availWidth >= 768 ? `50vw` : undefined,
       data: {
         postType: 'cooking',
         title: 'Adding new Cooking Post',

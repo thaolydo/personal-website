@@ -27,6 +27,7 @@ export class TravelComponent implements OnInit {
 
   async addNewTravelPost() {
     const dialogRef = this.dialog.open(AddPostDialogComponent, {
+      width: window.screen.availWidth >= 768 ? `50vw` : undefined,
       data: {
         postType: 'travel',
         title: 'Adding new Travel Post',
