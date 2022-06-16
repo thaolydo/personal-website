@@ -33,8 +33,20 @@
 
             <div class="demo">
                 <!-- Photos -->
-                <div class="movie-project-photo-container gigantify-11">
-                    <img class="movie-project-photo-1 mat-elevation-z8" src="assets/project-movie-1.png" />
+                <div class="movie-project-photo-container mat-elevation-z8 gigantify-11">
+                    <swiper [slidesPerView]="1" [spaceBetween]="30" [loop]="true" [pagination]="{
+      clickable: true
+    }" [navigation]="true" class="mySwiper">
+                        <ng-template swiperSlide><img class="movie-project-photo" src="assets/project-movie-4.svg" /></ng-template>
+                        <ng-template swiperSlide><img class="movie-project-photo" src="assets/project-movie-2.svg" /></ng-template>
+                        <ng-template swiperSlide><img class="movie-project-photo" src="assets/project-movie-3.svg" /></ng-template>
+                        <ng-template swiperSlide><img class="movie-project-photo" src="assets/project-movie-1.svg" /></ng-template>
+                        <ng-template swiperSlide><img class="movie-project-photo" src="assets/project-movie-5.svg" /></ng-template>
+                        <ng-template swiperSlide><img class="movie-project-photo" src="assets/project-movie-6.svg" /></ng-template>
+                        <ng-template swiperSlide><img class="movie-project-photo" src="assets/project-movie-7.svg" /></ng-template>
+                        <ng-template swiperSlide><img class="movie-project-photo" src="assets/project-movie-8.svg" /></ng-template>
+                        <ng-template swiperSlide><img class="movie-project-photo" src="assets/project-movie-9.svg" /></ng-template>
+                    </swiper>
                 </div>
 
                 <!-- Project links -->
@@ -95,11 +107,11 @@
                             shadowOffset: 20,
                             shadowScale: 0.94
                           }" [pagination]="true" class="mySwiper">
-                        <ng-template swiperSlide><img class="mat-elevation-z8"
+                        <ng-template swiperSlide><img class="mat-elevation-z8 project-expense-tracker-img"
                                 src="assets/project-expense-tracker-1.png"></ng-template>
-                        <ng-template swiperSlide><img class="mat-elevation-z8"
+                        <ng-template swiperSlide><img class="mat-elevation-z8 project-expense-tracker-img"
                                 src="assets/project-expense-tracker-2.png"></ng-template>
-                        <ng-template swiperSlide><img class="mat-elevation-z8"
+                        <ng-template swiperSlide><img class="mat-elevation-z8 project-expense-tracker-img"
                                 src="assets/project-expense-tracker-3.png"></ng-template>
                     </swiper>
                 </div>
@@ -159,7 +171,8 @@
 <div class="skills-container">
     <h2>SKILLS</h2>
     <p style="margin-bottom: 1em;">
-        <span style="text-decoration: underline;">Backend</span>: NodeJS, AWS Services, DynamoDB, Java, Spring Boot, MEAN stack, Google Guice, PostgreSQL, Python.
+        <span style="text-decoration: underline;">Backend</span>: NodeJS, AWS Services, DynamoDB, Java, Spring Boot,
+        MEAN stack, Google Guice, PostgreSQL, Python.
     </p>
     <p>
         <span style="text-decoration: underline;">Frontend</span>: Angular, TypeScript, HTML, CSS, Android SDK.

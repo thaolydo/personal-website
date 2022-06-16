@@ -95,9 +95,11 @@ a {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    border-radius: 1em;
 }
 
-.movie-project-photo-1 {
+.movie-project-photo {
+    display: block;
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -133,6 +135,22 @@ a {
     flex-direction: column;
     align-items: center;
     width: 75%;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+
+.project-expense-tracker-img {
+    display: block;
+    width: 100% !important;
 }
 
 .android-project-links {
@@ -236,7 +254,7 @@ p {
     }
 
     .movie-project-photo-container {
-        width: 75%;
+        width: 80%;
     }
 
     .movie-project-photo-1 {
@@ -294,11 +312,6 @@ p {
 
     .music-photo-container {
         width: 75%;
-    }
-
-    .music-photo {
-        max-width: 100%;
-        height: auto;
     }
 
 }
