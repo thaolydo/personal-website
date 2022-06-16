@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -35,9 +36,20 @@ export class CookingPostComponent implements OnInit {
     }
     this.deleteingPost = true;
     const id = this.route.snapshot.params['id'];
-    await this.cookingService.deleteCookingPost(id);
-    this.router.navigate(['/cooking']);
-    this.deleteingPost = false;
+    try {
+      await this.cookingService.deleteCookingPost(id);
+      this.router.navigate(['/cooking']);
+    } catch (e) {
+      if (e instanceof HttpErrorResponse) {
+        if (e.status == 403) {
+          alert('This post can only be deleted by the owner');
+          return;
+        }
+      }
+      alert('Unable to delete this picture. Please try again.');
+    } finally {
+      this.deleteingPost = false;
+    }
   }
 
   async editPost() {
