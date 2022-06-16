@@ -148,6 +148,11 @@ a {
     background-size: cover;
 }
 
+.swiper-pagination-bullets {
+    position: absolute;
+    bottom: 0px !important;
+}
+
 .project-expense-tracker-img {
     display: block;
     width: 100% !important;
