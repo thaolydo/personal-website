@@ -236,7 +236,7 @@ p {
 
     .ly-photo {
         width: 20vw;
-        height: 20vw;
+        height: auto;
         object-fit: cover;
     }
 
