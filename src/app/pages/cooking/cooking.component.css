@@ -18,6 +18,10 @@
     align-self: center;
 }
 
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: lightpink !important;
+}
+
 mat-card {
     margin: 1em;
     max-width: 100%;
@@ -59,6 +63,7 @@ img {
 
 
 @media only screen and (min-width: 768px) {
+
     /* Desktop */
     :host {
         padding: 2em 5em;
