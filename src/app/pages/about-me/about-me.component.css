@@ -72,6 +72,11 @@ a {
     flex-direction: column;
 }
 
+h3 {
+    color: orange;
+    font-weight: bolder;
+}
+
 /* Movie App Project */
 .movie-project {
     margin-bottom: 2em;
