@@ -27,6 +27,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SwiperModule } from 'swiper/angular';
 import { MatMenuModule } from '@angular/material/menu';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { MatMenuModule } from '@angular/material/menu';
     AboutMeComponent,
     CookingPostComponent,
     TravelPostComponent,
-    AddPostDialogComponent
+    AddPostDialogComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

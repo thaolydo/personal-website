@@ -1,0 +1,35 @@
+a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+    text-decoration: inherit;
+    margin: 0.2em;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.footer-link {
+    margin: 1em;
+    min-width: 2em;
+}
+
+.footer-link-text {
+    font-size: small;
+    margin-top: 0.3em;
+    font-style: italic;
+    color: #a48f64;
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+    .footer-link-text {
+        margin-top: 0.5em;
+    }
+}

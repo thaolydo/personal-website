@@ -73,7 +73,7 @@ a {
 }
 
 h3 {
-    color: orange;
+    color: #a18b5e;
     font-weight: bolder;
 }
 
@@ -199,10 +199,6 @@ h3 {
 .music-photo {
     max-width: 100%;
     height: auto;
-}
-
-.mat-divider {
-    border-top-width: 3px;
 }
 
 .project-divider {

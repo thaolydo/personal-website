@@ -20,6 +20,10 @@ body {
     bottom: 0px !important;
 }
 
+.mat-divider {
+    border-top-width: 3px;
+}
+
 @media only screen and (min-width: 768px) {
     /* Desktop */
     .gigantify-15 {
