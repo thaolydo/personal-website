@@ -13,6 +13,7 @@ a {
     flex-direction: row;
     width: 100%;
     justify-content: center;
+    background-color: lightgray;
 }
 
 .footer-link {
@@ -24,7 +25,7 @@ a {
     font-size: small;
     margin-top: 0.3em;
     font-style: italic;
-    color: #a48f64;
+    color: #b17c19;
     text-decoration: underline;
 }
 
