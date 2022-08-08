@@ -61,7 +61,7 @@ export class AddPostDialogComponent implements OnInit {
       ...["amazon’s-sphere", 'city-view', 'quinault-national-park-', 'fall-color-lake', 'capming'],
       ...['crawfish-', 'bb', 'ceviche', 'hi', 'wonton']
     ]);
-    if (BLOCK_LIST_PIDS.has(this.data.post.pid)) {
+    if (this.data?.post?.pid && BLOCK_LIST_PIDS.has(this.data.post.pid)) {
       alert('this post can only be updated by the owner');
       return;
     }
