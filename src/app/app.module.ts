@@ -28,6 +28,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SwiperModule } from 'swiper/angular';
 import { MatMenuModule } from '@angular/material/menu';
 import { FooterComponent } from './footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { FooterComponent } from './footer/footer.component';
     MatProgressSpinnerModule,
     SwiperModule,
     MatMenuModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

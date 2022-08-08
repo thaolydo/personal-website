@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UploadImageService } from 'src/app/services/upload-image.service';
 
@@ -15,12 +15,12 @@ export class AddPostDialogComponent implements OnInit {
   selectedFile: File;
   uploadingImage: boolean = false;
   savingPost: boolean = false;
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   constructor(
     private dialogRef: MatDialogRef<AddPostDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private uploadImageService: UploadImageService,
   ) { }
 
