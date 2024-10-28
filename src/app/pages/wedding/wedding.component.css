@@ -1,0 +1,46 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 1em;
+    justify-content: center;
+}
+
+.image-upload-input {
+    visibility: hidden;
+    justify-content: center;
+    width: 0 !important;
+}
+
+img {
+    width: 75%;
+    height: auto;
+}
+
+.uploading-spinner {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.objects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.object {
+    width: 100%;
+    margin-top: 1em;
+}
+
+mat-divider {
+    margin: 1em 0 1em 0;
+}
+
+/* Desktop */
+@media only screen and (min-width: 768px) {
+    :host {
+        padding: 2em 5em;
+    }
+
+}

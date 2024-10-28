@@ -1,15 +1,24 @@
 #!/bin/bash
-BUCKET=s3://ly-do.com
-DISTRIBUTION_ID=E27KQGU3JT3EX2
+
+# ly-do.com
+# BUCKET=s3://ly-do.com
+# DISTRIBUTION_ID=E27KQGU3JT3EX2
+
+# huy-ly.com
+BUCKET=s3://huy-ly.com
+DISTRIBUTION_ID=E24MX45L3CGYXI
+profile="ly-website"
 
 # Remove all existing files in the bucket
 echo "Deleting all existing files in the bucket"
-aws s3 --profile lydo rm "$BUCKET" --recursive
+aws s3 --profile $profile rm "$BUCKET" --recursive
 
 # Upload from dist folder
 echo "Uploading files in the dist folder"
-aws s3 --profile lydo cp dist/personal-website "$BUCKET" --recursive
+aws s3 --profile $profile cp dist/personal-website "$BUCKET" --recursive
 
 # Invalidate cache from CloudFront
 
-aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
+aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID \
+    --paths "/*" \
+    --profile $profile

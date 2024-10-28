@@ -6,6 +6,7 @@ a {
     color: inherit;
     text-decoration: inherit;
     margin: 0.2em;
+    visibility: hidden;
 }
 
 .footer {

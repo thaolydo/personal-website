@@ -17,6 +17,7 @@ mat-toolbar {
 .cooking,
 .travel,
 .blogger,
+.wedding,
 .about-me {
     margin: 0.25em;
     font-size: medium;
@@ -30,6 +31,7 @@ mat-toolbar {
 
 .cooking:hover,
 .travel:hover,
+.wedding:hover,
 .about-me:hover {
     font-size: large;
     transform: scale(1.5);
@@ -61,6 +63,7 @@ svg {
 
     .cooking,
     .travel,
+    .wedding,
     .blogger,
     .about-me {
         margin: 1em;
@@ -69,6 +72,7 @@ svg {
 
     .cooking:hover,
     .travel:hover,
+    .wedding:hover,
     .about-me:hover {
         font-size: xx-large;
         font-weight: medium;

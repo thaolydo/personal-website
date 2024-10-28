@@ -1,0 +1,26 @@
+<input #imageUploadInput type="file" class="image-upload-input" (change)="onFilesSelected($event.target.files)"
+    multiple>
+<button mat-raised-button (click)="imageUploadInput.click()">
+    <mat-icon>file_upload</mat-icon>
+    <span>Upload</span>
+</button>
+<div class="image-container">
+    <div *ngIf="uploadingImage">
+        Uploading {{curFile.name}}
+        <mat-spinner class="uploading-spinner" diameter="30"></mat-spinner>
+    </div>
+    <img #img>
+</div>
+
+<mat-divider></mat-divider>
+<div *ngIf="loadingImages">
+    <mat-spinner class="uploading-spinner" diameter="30"></mat-spinner>
+</div>
+<div class="objects">
+    <div *ngFor="let object of objects">
+        <img *ngIf="object.isImage" [src]="object.url" alt="Object Image" class="object">
+        <video *ngIf="!object.isImage" class="object" controls>
+            <source [src]="object.url">
+        </video>
+    </div>
+</div>

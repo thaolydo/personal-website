@@ -25,10 +25,13 @@ import { AddPostDialogComponent } from './components/add-post-dialog/add-post-di
 import { MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { SwiperModule } from 'swiper/angular';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
+
+import { SwiperModule } from 'swiper/angular';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { WeddingComponent } from './pages/wedding/wedding.component';
 
 
 @NgModule({
@@ -43,7 +46,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CookingPostComponent,
     TravelPostComponent,
     AddPostDialogComponent,
-    FooterComponent
+    FooterComponent,
+    WeddingComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +67,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatProgressSpinnerModule,
     SwiperModule,
     MatMenuModule,
+    MatSnackBarModule,
     FontAwesomeModule,
   ],
   providers: [],

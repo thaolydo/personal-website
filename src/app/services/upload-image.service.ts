@@ -27,13 +27,23 @@ export class UploadImageService {
     }
 
     // https://aws.amazon.com/blogs/compute/uploading-to-amazon-s3-directly-from-a-web-or-mobile-application
-    getSignedUrl(postType: 'travel' | 'cooking', fileName: string, contentType: string): Promise<GetSignedUrlResponse> {
+    getSignedUrl(filePath: 'travel' | 'cooking' | 'wedding', fileName: string, contentType: string): Promise<GetSignedUrlResponse> {
         console.log('Getting signed url');
         return this.httpClient.get<GetSignedUrlResponse>(`${this.apiUrl}/get-signed-url`, {
             params: {
-                postType,
+                filePath,
                 fileName,
                 contentType
+            }
+        }).toPromise();
+    }
+
+    getSignedUrlV2(filePath: string, fileName: string): Promise<GetSignedUrlResponse> {
+        console.log('Getting signed url');
+        return this.httpClient.get<GetSignedUrlResponse>(`${this.apiUrl}/get-signed-url`, {
+            params: {
+                filePath,
+                fileName,
             }
         }).toPromise();
     }
@@ -49,7 +59,7 @@ export class UploadImageService {
     }
 
     // https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/modules/_aws_sdk_s3_presigned_post.html
-    uploadToSignedPostUrl(signedUrl: string, contentType: string, fields: any, blob: Blob) {
+    uploadToSignedPostUrl(signedUrl: string, fields: any, blob: Blob) {
         console.log('Uploading to signed url POST');
 
         // Generatinig form data following this post: https://www.webiny.com/blog/upload-files-to-aws-s3-using-pre-signed-post-data-and-a-lambda-function-7a9fb06d56c1
@@ -62,6 +72,11 @@ export class UploadImageService {
         // Actual file has to be appended last.
         formData.append("file", blob);
         return this.httpClient.post(signedUrl, formData).toPromise();
+    }
+
+    getWeddingUrls(): Promise<any> {
+        console.log('Getting wedding urls');
+        return this.httpClient.get(`${this.apiUrl}/wedding/get-wedding-urls`).toPromise();
     }
 
 }

@@ -1,12 +1,13 @@
 <mat-toolbar>
-    <img class="logo" routerLink="/about-me" src="assets/logo.png">
+    <img class="logo" routerLink="/wedding" src="assets/logo.png">
     <span class="tabs">
-        <span [routerLinkActive]="'selected'" routerLink="/about-me" class="about-me">ABOUT ME</span>
-        <span [routerLinkActive]="'selected'" routerLink="/travel" class="travel">TRAVEL</span>
-        <span [routerLinkActive]="'selected'" routerLink="/cooking" class="cooking">COOKING</span>
+        <!-- <span [routerLinkActive]="'selected'" routerLink="/about-me" class="about-me">ABOUT ME</span> -->
+        <span [routerLinkActive]="'selected'" routerLink="/wedding" class="wedding">HUY & LY WEDDING</span>
+        <!-- <span [routerLinkActive]="'selected'" routerLink="/travel" class="travel">TRAVEL</span>
+        <span [routerLinkActive]="'selected'" routerLink="/cooking" class="cooking">COOKING</span> -->
     </span>
 
-    <span class="links">
+    <span class="links" style="visibility: hidden;">
         <a class="gigantify-15" matRipple href="https://github.com/thaolydo" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path
