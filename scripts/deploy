@@ -21,4 +21,4 @@ aws s3 --profile $profile cp dist/personal-website "$BUCKET" --recursive
 
 aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID \
     --paths "/*" \
-    --profile $profile
+    --profile $profile | cat
